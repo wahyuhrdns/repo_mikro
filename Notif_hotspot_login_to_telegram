@@ -1,0 +1,10 @@
+/ip hotspot ip-binding add mac-address=$"mac-address" server=all type=bypassed comment="hotspot_user_$user_"
+
+:local mac $"mac-address";
+:local host [/ip dhcp-server lease get [find mac-address="$mac"] host-name];
+/tool fetch url="https://api.telegram.org/bot-b0t-telegram-/sendMessage?chat_id=-caht-id-telegram&text=Login %0Aserver: $servers %0Auser: $user%0AIP: $address%0AMac : $"mac-address" %0Ahost : $host" keep-result=no
+
+
+
+/tool fetch http-method=post http-header-field="Content-Type: application/json" \
+http-data=("{\"id\":\"".$user."\",\"ip\":\"".$address."\",\"host\":\"".$host."\", \"paramtype\": \"mykg\" }") url="https://script.google.com/macros/s/-spreadsheet-macroo-"
