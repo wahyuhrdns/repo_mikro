@@ -8,7 +8,3 @@
 
 /tool fetch http-method=post http-header-field="Content-Type: application/json" \
 http-data=("{\"id\":\"".$user."\",\"ip\":\"".$address."\",\"host\":\"".$host."\", \"paramtype\": \"mykg\" }") url="https://script.google.com/macros/s/-spreadsheet-macroo-"
-
-
-
-asadasdasdas
